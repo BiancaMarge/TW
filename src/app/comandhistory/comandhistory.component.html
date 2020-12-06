@@ -1,0 +1,18 @@
+<div style="padding: 2rem">
+    <table>
+          <tr>
+              <td> <h6>Cod</h6> </td>
+              <td> <h6>Produse</h6> </td>
+              <td> <h6>Pret</h6> </td>
+              <td> <h6>Cantitate</h6> </td>
+              <td> <h6>Data </h6> </td>
+          </tr>
+          <tr *ngFor="let item of orderList">
+              <td> {{item.code}} </td>
+              <td> {{item.products}} </td>
+              <td> {{item.price}} </td>
+              <td> {{item.quantity}} </td>
+              <td> {{item.date}} </td>
+          </tr>
+    </table>
+</div>

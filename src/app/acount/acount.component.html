@@ -1,0 +1,25 @@
+<app-toolbar></app-toolbar>
+<br>
+<app-carousel> </app-carousel>
+<br>
+
+<p-tabMenu [model]="items1">
+    <ng-template pTemplate="item" let-item let-i="index">
+        <div (click)="activateItem(item)"> 
+            {{item.label}}
+        </div>
+    </ng-template>
+</p-tabMenu>
+<div *ngIf="activeItem.label == items1[0].label">
+    <app-acsettings></app-acsettings>
+</div>
+<div *ngIf="activeItem.label == items1[1].label">
+    <app-comandhistory></app-comandhistory>
+</div>
+<div *ngIf="activeItem.label == items1[2].label">
+    <app-retur-prod> </app-retur-prod>
+</div>
+<div *ngIf="activeItem.label == items1[3].label">
+    <app-voucher></app-voucher>
+</div>
+

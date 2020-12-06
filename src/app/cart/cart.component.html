@@ -1,0 +1,19 @@
+<app-toolbar></app-toolbar>
+<br>
+<app-carousel></app-carousel>
+<br>
+<p-orderList [value]="products" [listStyle]="{'height':'auto'}"  filterBy="name" filterPlaceholder="Filter by name" dragdrop="true" >
+    <ng-template let-product pTemplate="item">
+        <div class="product-item">
+            <div class="product-list-detail">
+                <h5 class="p-mb-2">{{product.name}}</h5>
+                <i class="pi pi-tag product-category-icon"></i>
+                <span class="product-category">{{product.category}}</span>
+            </div>
+            <div class="product-list-action">
+                <h6 class="p-mb-2">${{product.price}}</h6>
+                <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+            </div>
+        </div>
+    </ng-template>
+</p-orderList>

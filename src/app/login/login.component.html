@@ -1,0 +1,43 @@
+<!--<app-toolbar>
+
+</app-toolbar>-->
+<p-menubar  [model]="items">
+    <div>
+      <input type="text" pInputText placeholder="Search">
+
+    </div>
+  </p-menubar>
+
+  <br>
+<app-carousel></app-carousel>
+
+    <div class="flex-container" style=" padding-left: 7rem">
+      <div>
+        <p>Login to your account</p>
+        <form (ngSubmit)="onSubmit()" action="#">
+          <input class="login-form" type="text" placeholder="Name"
+            required [(ngModel)]="itemName" name="item">
+          <input class="login-form" type="email" placeholder="Email Address"
+            required [(ngModel)]="itemValue" name="item">
+          <input type="checkbox" class="checkbox" >Keep me singed in
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+
+      <div class="or-div">
+        <h2 class="or" >OR</h2>
+      </div>
+
+     <div>
+          <p>New User Signup!</p>
+          <form (ngSubmit)="onSubmitSignup()" action="#">
+            <input class="login-form" type="text" placeholder="Name"
+               required [(ngModel)]="itemName1" name="item">
+            <input class="login-form" type="email" placeholder="Email Address"
+               required [(ngModel)]="itemEmail" name="item">
+            <input class="login-form" type="password" placeholder="Password"
+              required [(ngModel)]="itemPassword" name="item">
+            <button type="submit" class="btn">Signup</button>
+          </form>
+        </div>
+    </div>
