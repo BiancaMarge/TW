@@ -1,0 +1,25 @@
+<p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div class="p-mb-3">
+                </div>
+                <div>
+                    <img src="{{product.image}}" width="120" height="80">
+                    <br>
+                    <h4 class="p-mb-1">{{product.name}}</h4>
+                    <br>
+                    <h5 class="p-mt-0 p-mb-3">${{product.price}}</h5>
+                    
+                    <!--
+                        <div class="car-buttons p-mt-5">
+                        <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-heart" (click)="addToWishlist(product.id, product.code, product.name, product.description, product.image, product.price, product.category, product.quantity, product.inventoryStatus,product.rating,product.quantityCart)"></p-button>
+                        <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-shopping-cart" (click)="addToCart(product.id, product.code, product.name, product.description, product.image, product.price, product.category, product.quantity, product.inventoryStatus,product.rating,product.quantityCart)"></p-button>
+                    </div>
+                    -->
+                    
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>

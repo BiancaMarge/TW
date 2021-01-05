@@ -1,0 +1,996 @@
+<div class="flex-container">
+    <div style="width: 20%;">
+
+       <p-panelMenu [model]="items" [style]="{'width':'90%'}" ></p-panelMenu>
+    </div>
+    <div style="width: 80%;">
+
+        <div *ngIf="cat==0">
+            <br>
+            <div *ngFor="let item of prodList; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card">
+                            <ng-template pTemplate="header"> <img src="{{item.image}}" > </ng-template>
+                            <p> {{item.name}} </p>
+                            <p> {{item.category}} </p>
+                            <p> {{item.description}}</p>
+                            <p> {{item.price}} $</p>
+
+                            <div class="flex-container">
+                              <div class="flex-container-small">
+                                    <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                              </div>
+                              <div class="flex-container-small">
+                                    <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                              </div>
+                            </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodList.length" style="width: 33%;">
+                        <p-card>
+                            <ng-template pTemplate="header"> <img src="{{prodList[i+1].image}}"> </ng-template>
+                            <p> {{prodList[i+1].name}} </p>
+                            <p> {{prodList[i+1].category}} </p>
+                            <p> {{prodList[i+1].description}}</p>
+                            <p> {{prodList[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                            <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodList[i+1])"> </p-button>
+                          </div>
+                            <div class="flex-container-small">
+                            <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodList[i+1])"> </p-button>
+                            </div>
+                          </div>
+
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodList.length" style="width: 33%;">
+                        <p-card>
+                             <ng-template pTemplate="header"> <img src="{{prodList[i+2].image}}"> </ng-template>
+                            <p> {{prodList[i+2].name}} </p>
+                            <p> {{prodList[i+2].category}} </p>
+                            <p>{{prodList[i+2].description}}</p>
+                            <p> {{prodList[i+2].price}} $</p>
+
+                            <div class="flex-container">
+                                <div class="flex-container-small">
+                                    <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodList[i+2])"></p-button>
+                                </div>
+                                <div class="flex-container-small">
+                                    <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodList[i+2])"> </p-button>
+                                </div>
+
+                            </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==1">
+            <br>
+            <div *ngFor="let item of prodListAcc; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card">
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListAcc.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListAcc[i+1].image}}"> </ng-template>
+                            <p> {{prodListAcc[i+1].name}} </p>
+                            <p> {{prodListAcc[i+1].category}} </p>
+                            <p> {{prodListAcc[i+1].description}}</p>
+                            <p> {{prodListAcc[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListAcc[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListAcc[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListAcc.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListAcc[i+2].image}}"> </ng-template>
+                            <p> {{prodListAcc[i+2].name}} </p>
+                            <p> {{prodListAcc[i+2].category}} </p>
+                            <p> {{prodListAcc[i+2].description}}</p>
+                            <p> {{prodListAcc[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListAcc[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListAcc[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==2">
+            <br>
+            <div *ngFor="let item of prodListPowerStation; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListPowerStation.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListPowerStation[i+1].image}}"> </ng-template>
+                            <p> {{prodListPowerStation[i+1].name}} </p>
+                            <p> {{prodListPowerStation[i+1].category}} </p>
+                            <p> {{prodListPowerStation[i+1].description}}</p>
+                            <p> {{prodListPowerStation[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListPowerStation[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListPowerStation[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListPowerStation.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListPowerStation[i+2].image}}"> </ng-template>
+                            <p> {{prodListPowerStation[i+2].name}} </p>
+                            <p> {{prodListPowerStation[i+2].category}} </p>
+                            <p> {{prodListPowerStation[i+2].description}}</p>
+                            <p> {{prodListPowerStation[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListPowerStation[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListPowerStation[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==3">
+            <br>
+            <div *ngFor="let item of prodListComponents; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListComponents.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListComponents[i+1].image}}"> </ng-template>
+                            <p> {{prodListComponents[i+1].name}} </p>
+                            <p> {{prodListComponents[i+1].category}} </p>
+                            <p> {{prodListComponents[i+1].description}}</p>
+                            <p> {{prodListComponents[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListComponents[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListComponents[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListComponents.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListComponents[i+2].image}}"> </ng-template>
+                            <p> {{prodListComponents[i+2].name}} </p>
+                            <p> {{prodListComponents[i+2].category}} </p>
+                            <p> {{prodListComponents[i+2].description}}</p>
+                            <p> {{prodListComponents[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListComponents[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListComponents[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==4">
+            <br>
+            <div *ngFor="let item of prodListSmartwatches; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card">
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListSmartwatches.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListSmartwatches[i+1].image}}"> </ng-template>
+                            <p> {{prodListSmartwatches[i+1].name}} </p>
+                            <p> {{prodListSmartwatches[i+1].category}} </p>
+                            <p> {{prodListSmartwatches[i+1].description}}</p>
+                            <p> {{prodListSmartwatches[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListSmartwatches[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListSmartwatches[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListSmartwatches.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListSmartwatches[i+2].image}}"> </ng-template>
+                            <p> {{prodListSmartwatches[i+2].name}} </p>
+                            <p> {{prodListSmartwatches[i+2].category}} </p>
+                            <p> {{prodListSmartwatches[i+2].description}}</p>
+                            <p> {{prodListAcc[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListSmartwatches[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListSmartwatches[i+2])"> </p-button>
+                            </div>
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==5">
+            <h3> Headphones: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListHeadphones; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListHeadphones.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListHeadphones[i+1].image}}"> </ng-template>
+                            <p> {{prodListHeadphones[i+1].name}} </p>
+                            <p> {{prodListHeadphones[i+1].category}} </p>
+                            <p> {{prodListHeadphones[i+1].description}}</p>
+                            <p> {{prodListHeadphones[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListHeadphones[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListHeadphones[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListHeadphones.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListHeadphones[i+2].image}}"> </ng-template>
+                            <p> {{prodListHeadphones[i+2].name}} </p>
+                            <p> {{prodListHeadphones[i+2].category}} </p>
+                            <p> {{prodListHeadphones[i+2].description}}</p>
+                            <p> {{prodListHeadphones[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListHeadphones[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListHeadphones[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==6">
+            <h3> Electronics: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListElectronics; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListElectronics.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListElectronics[i+1].image}}"> </ng-template>
+                            <p> {{prodListElectronics[i+1].name}} </p>
+                            <p> {{prodListElectronics[i+1].category}} </p>
+                            <p> {{prodListElectronics[i+1].description}}</p>
+                            <p> {{prodListElectronics[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListElectronics[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListElectronics[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListElectronics.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListElectronics[i+2].image}}"> </ng-template>
+                            <p> {{prodListElectronics[i+2].name}} </p>
+                            <p> {{prodListElectronics[i+2].category}} </p>
+                            <p> {{prodListElectronics[i+2].description}}</p>
+                            <p> {{prodListElectronics[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListElectronics[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListElectronics[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==7">
+            <h3> Mouses: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListMouse; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListMouse.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListMouse[i+1].image}}"> </ng-template>
+                            <p> {{prodListMouse[i+1].name}} </p>
+                            <p> {{prodListMouse[i+1].category}} </p>
+                            <p> {{prodListMouse[i+1].description}}</p>
+                            <p> {{prodListMouse[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListMouse[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListMouse[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListMouse.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListMouse[i+2].image}}"> </ng-template>
+                            <p> {{prodListMouse[i+2].name}} </p>
+                            <p> {{prodListMouse[i+2].category}} </p>
+                            <p> {{prodListMouse[i+2].description}}</p>
+                            <p> {{prodListMouse[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListMouse[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListMouse[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==8">
+            <h3> Keyboards: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListKeyboards; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListKeyboards.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListKeyboards[i+1].image}}"> </ng-template>
+                            <p> {{prodListKeyboards[i+1].name}} </p>
+                            <p> {{prodListKeyboards[i+1].category}} </p>
+                            <p> {{prodListKeyboards[i+1].description}}</p>
+                            <p> {{prodListKeyboards[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListKeyboards[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListKeyboards[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListKeyboards.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListKeyboards[i+2].image}}"> </ng-template>
+                            <p> {{prodListKeyboards[i+2].name}} </p>
+                            <p> {{prodListKeyboards[i+2].category}} </p>
+                            <p> {{prodListKeyboards[i+2].description}}</p>
+                            <p> {{prodListKeyboards[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListKeyboards[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListKeyboards[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==9">
+            <h3> Laptops: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListLaptops; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListLaptops.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListLaptops[i+1].image}}"> </ng-template>
+                            <p> {{prodListLaptops[i+1].name}} </p>
+                            <p> {{prodListLaptops[i+1].category}} </p>
+                            <p> {{prodListLaptops[i+1].description}}</p>
+                            <p> {{prodListLaptops[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListLaptops[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListLaptops[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListLaptops.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListLaptops[i+2].image}}"> </ng-template>
+                            <p> {{prodListLaptops[i+2].name}} </p>
+                            <p> {{prodListLaptops[i+2].category}} </p>
+                            <p> {{prodListLaptops[i+2].description}}</p>
+                            <p> {{prodListLaptops[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListLaptops[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListLaptops[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==10">
+            <h3> Tablets: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListTablets; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListTablets.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListTablets[i+1].image}}"> </ng-template>
+                            <p> {{prodListTablets[i+1].name}} </p>
+                            <p> {{prodListTablets[i+1].category}} </p>
+                            <p> {{prodListTablets[i+1].description}}</p>
+                            <p> {{prodListTablets[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListTablets[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListTablets[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListTablets.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListTablets[i+2].image}}"> </ng-template>
+                            <p> {{prodListTablets[i+2].name}} </p>
+                            <p> {{prodListTablets[i+2].category}} </p>
+                            <p> {{prodListTablets[i+2].description}}</p>
+                            <p> {{prodListTablets[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListTablets[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListTablets[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==11">
+            <h3> Gamimg: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListGaming; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListGaming.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListGaming[i+1].image}}"> </ng-template>
+                            <p> {{prodListGaming[i+1].name}} </p>
+                            <p> {{prodListGaming[i+1].category}} </p>
+                            <p> {{prodListGaming[i+1].description}}</p>
+                            <p> {{prodListGaming[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListGaming[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListGaming[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListGaming.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListGaming[i+2].image}}"> </ng-template>
+                            <p> {{prodListGaming[i+2].name}} </p>
+                            <p> {{prodListGaming[i+2].category}} </p>
+                            <p> {{prodListGaming[i+2].description}}</p>
+                            <p> {{prodListGaming[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListGaming[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListGaming[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==12">
+            <h3> TVs: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListTVs; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListTVs.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListTVs[i+1].image}}"> </ng-template>
+                            <p> {{prodListTVs[i+1].name}} </p>
+                            <p> {{prodListTVs[i+1].category}} </p>
+                            <p> {{prodListTVs[i+1].description}}</p>
+                            <p> {{prodListTVs[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListTVs[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListTVs[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListTVs.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListTVs[i+2].image}}"> </ng-template>
+                            <p> {{prodListTVs[i+2].name}} </p>
+                            <p> {{prodListTVs[i+2].category}} </p>
+                            <p> {{prodListTVs[i+2].description}}</p>
+                            <p> {{prodListTVs[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListTVs[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListTVs[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="cat==13">
+            <h3> Photography: (css pe el) </h3>
+            <br>
+            <div *ngFor="let item of prodListPhotography; let i= index">
+                <div *ngIf="i%3==0" class="row">
+
+                    <p-card class="card"  >
+
+                        <ng-template pTemplate="header"> <img src="{{item.image}}"> </ng-template>
+                        <p> {{item.name}} </p>
+                        <p> {{item.category}} </p>
+                        <p> {{item.description}}</p>
+                        <p> {{item.price}} $</p>
+
+                      <div class="flex-container">
+                        <div class="flex-container-small">
+                          <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(item)"> </p-button>
+                        </div>
+                        <div class="flex-container-small">
+                          <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(item)"> </p-button>
+                        </div>
+                      </div>
+
+
+                    </p-card>
+
+
+                    <div *ngIf="i+1 < prodListPhotography.length" style="width: 33%;">
+                        <p-card >
+                           <ng-template pTemplate="header"> <img src="{{prodListPhotography[i+1].image}}"> </ng-template>
+                            <p> {{prodListPhotography[i+1].name}} </p>
+                            <p> {{prodListPhotography[i+1].category}} </p>
+                            <p> {{prodListPhotography[i+1].description}}</p>
+                            <p> {{prodListPhotography[i+1].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListPhotography[i+1])"> </p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListPhotography[i+1])"> </p-button>
+                            </div>
+                          </div>
+                        </p-card>
+
+                    </div>
+
+                    <div *ngIf="i+2 < prodListPhotography.length" style="width: 33%;">
+                        <p-card >
+                             <ng-template pTemplate="header"> <img src="{{prodListPhotography[i+2].image}}"> </ng-template>
+                            <p> {{prodListPhotography[i+2].name}} </p>
+                            <p> {{prodListPhotography[i+2].category}} </p>
+                            <p> {{prodListPhotography[i+2].description}}</p>
+                            <p> {{prodListPhotography[i+2].price}} $</p>
+
+                          <div class="flex-container">
+                            <div class="flex-container-small">
+                              <p-button label="Buy" icon='pi pi-shopping-cart' (click)="addToCart(prodListPhotography[i+2])"></p-button>
+                            </div>
+                            <div class="flex-container-small">
+                              <p-button label="Wishlist" icon='pi pi-heart' (click)="addToWishlist(prodListPhotography[i+2])"> </p-button>
+                            </div>
+
+                          </div>
+
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

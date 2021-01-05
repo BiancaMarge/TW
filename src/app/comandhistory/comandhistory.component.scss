@@ -1,0 +1,47 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-container-small{
+    width: 33%;
+  }
+  
+  .card-style{
+    background-color: #e4f1f9;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    margin: 0 0 20px;
+    border-radius: 3px;
+    text-align: left;
+  }
+  
+  .buttons-style{
+    background: #e4f1f9;
+    border: medium none;
+    border-radius: 0;
+    color: black;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 6px 25px;
+    margin-top: 23px;
+    cursor: pointer;
+  }
+  
+  .login-form{
+  background: #F0F0E9;
+  border: medium none;
+  color: #696763;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 50%;
+  
+  }
+  

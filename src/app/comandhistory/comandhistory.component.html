@@ -1,0 +1,31 @@
+
+<div *ngFor="let item of prodListAf">
+    <div class="card-style">
+    <div *ngFor= "let i of item">
+       
+        
+            <div class="card-style" style="background-color: white">
+              <div class="flex-container">
+                <div class="flex-container-small">
+                  <img src="{{i.image}}" width="120">
+                  </div>
+    
+                  <div class="flex-container-small">
+                    <p>{{i.name}}</p>
+                    <p>{{i.description}}</p>
+                  </div>
+    
+                  <div class="flex-container-small">
+                    <p style="padding-left: 7rem">{{i.price}} $</p>
+                    <p style="padding-left: 7rem">{{i.quantityCart}}</p>
+                  </div>
+                </div>
+            </div>
+    
+          
+    </div>
+    
+    
+</div>
+<br> <br>
+</div>

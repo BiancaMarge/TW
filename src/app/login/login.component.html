@@ -1,0 +1,59 @@
+<app-toolbar>
+
+</app-toolbar>
+
+
+  <br>
+<app-carousel></app-carousel>
+
+<br>
+<br>
+<br><br>
+<br>
+
+   <div *ngIf="error"> 
+     <H2 style="color:red"> {{error}}</H2>
+   </div>
+
+<div class="row" style="padding-left: 36%;">
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <div class="form-group">
+      <label for="email" > <b> <h3>{{ isLoginMode ? 'Login to your account' : 'New User Signup'}}</h3></b> </label>
+      <input 
+        type="email" 
+        id="email" 
+        class="login-form" 
+        ngModel
+        name="email"
+        placeholder="example@example.example"
+        email
+        required 
+      />
+    </div>
+   
+    <div class="form-group">
+      
+      <input
+       type="password"
+       id="password"
+       class="login-form" 
+       ngModel
+       name="password"
+       placeholder="password"
+       required
+       minlength="6"
+      />
+    </div>
+    <div>
+      <button 
+        class="btn" 
+        type="submit"
+        [disabled]="!authForm.valid"
+        >{{ isLoginMode ? 'Login' : 'Signup'}}</button>
+    </div>
+    <div>
+      <button class="btn" type="button" (click)="onSwitchMode()"> Switch to {{ isLoginMode ? 'Signup' : 'Login'}}</button>
+    </div>
+  </form>
+</div>
+

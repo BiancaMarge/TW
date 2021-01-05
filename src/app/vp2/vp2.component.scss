@@ -1,0 +1,40 @@
+.flex-container
+{
+    display: flex;
+    flex-direction:row;
+}
+.flex-container-small2
+{
+    width: 32%;
+}
+.flex-container-small
+{
+    width: 50%;
+}
+
+.card
+{
+    height: 40rem;
+    width: 33%;
+
+}
+
+.buton
+{
+    width: 90%;
+    //height: 0.5%;
+    margin-bottom: 2%;
+    background-color: rgb(33, 150, 243);
+    color: white;
+    border-radius: 12px;
+    //border-style: ;
+}
+h3{
+    font-family:Georgia,serif;
+	color:black;
+	font-variant: small-caps; text-transform: none; font-weight: 100; margin-bottom: 0;
+}
+
+p{
+  font-weight: bold;
+}

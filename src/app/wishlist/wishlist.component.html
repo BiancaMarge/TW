@@ -1,0 +1,38 @@
+<app-toolbar></app-toolbar>
+<br> <br>
+<app-carousel></app-carousel>
+
+<br>
+<div class="row" style="padding-left: 41%;">
+   <button (click)="saveWS()" class="btn">Save wishlist</button>
+
+    <button (click)="showP()" class="btn">Load last saved wishlist</button>
+ 
+</div>
+
+
+<div *ngFor="let item of clist" id="lista">
+    <p-card>
+        <div class="flex-container">
+            <div class="flex-container-small">
+                <img src="{{item.image}}" width="120">
+            </div>
+            <div class="flex-container-small">
+                <p> {{item.name}} </p>
+            </div>
+            
+            <div class="flex-container-small">
+                <p> Price {{item.price}} $</p>
+            </div>
+            <div class="flex-container-small">
+                <button class="btn" (click)="addToCart(item)" > Add to cart </button>
+              <p></p>
+                <button class="btn" (click)="delFromWl(item)" > Remove from wishlist </button>
+            </div>
+        </div>
+    </p-card>
+
+</div>
+
+
+

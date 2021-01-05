@@ -1,0 +1,17 @@
+<app-toolbar></app-toolbar>
+<br>
+<app-carousel> </app-carousel>
+<br>
+
+<p-tabMenu [model]="items1">
+    <ng-template pTemplate="item" let-item let-i="index">
+        <div (click)="activateItem(item)"> 
+            {{item.label}}
+        </div>
+    </ng-template>
+</p-tabMenu>
+
+    <app-comandhistory></app-comandhistory>
+
+
+

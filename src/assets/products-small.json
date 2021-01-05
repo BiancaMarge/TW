@@ -1,0 +1,145 @@
+{
+	"data":  
+	[
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Telefon mobil Samsung Galaxy S20 Plus",
+			"description": "Dual SIM, 128GB, 12GB RAM, 5G, Cosmic Black",
+			"image": "assets/img/1.jpg",
+			"price": 5000,
+			"category": "Smartphones",
+			"quantity": 24,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5,
+			"quantityCart": 0
+		},
+		{
+			"id": "1001",
+			"code": "nvklal433",
+			"name": "Telefon mobil Apple iPhone 12",
+			"description": "64GB, 5G, Black",
+			"image": "assets/img/2.jpg",
+			"price": 4500,
+			"category": "Smartphones",
+			"quantity": 61,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		},
+
+		{
+			"id": "1006",
+			"code": "bib36pfvm",
+			"name": "Ceas Smartwatch Huawei Watch GT 2",
+			"description": "42mm, Gravel Beige",
+			"image": "assets/img/7.jpg",
+			"price": 650,
+			"category": "Smartwatches",
+			"quantity": 5,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 3,
+			"quantityCart": 0
+		},
+		
+		{
+			"id": "1008",
+			"code": "vbb124btr",
+			"name": "Casti bluetooth Samsung Galaxy Buds Plus",
+			"description": "black",
+			"image": "assets/img/9.jpg",
+			"price": 500,
+			"category": "Headphones",
+			"quantity": 2,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		},
+
+	
+		{
+			"id": "1013",
+			"code": "fldsmn31b",
+			"name": "Apple Watch 6",
+			"description": "GPS, Carcasa Space Gray Aluminium 44mm, Black Sport Band",
+			"image": "assets/img/14.jpg",
+			"price": 2300,
+			"category": "Smartwatches",
+			"quantity": 0,
+			"inventoryStatus": "OUTOFSTOCK",
+			"rating": 3,
+			"quantityCart": 0
+		},
+	
+		{
+			"id": "1015",
+			"code": "vb34btbg5",
+			"name": "Tastatura gaming mecanica Razer BlackWidow Lite",
+			"description": "switch Orange silent, iluminare alb, Stormtrooper Edition",
+			"image": "assets/img/16.jpg",
+			"price": 499,
+			"category": "Keyboards",
+			"quantity": 34,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		},
+		
+		{
+			"id": "1017",
+			"code": "v435nn85n",
+			"name": "Laptop Gaming ASUS ROG Strix G15 G512LI",
+			"description": "procesor Intel® Core™ i7-10750H pana la 5.00 GHz, 15.6, Full HD, 144Hz, 8GB, 1TB SSD, NVIDIA® GeForce® GTX 1650 Ti 4GB, Free DOS, Black",
+			"image": "assets/img/18.jpg",
+			"price": 4585,
+			"category": "Laptops",
+			"quantity": 42,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		},
+		{
+			"id": "1018",
+			"code": "09zx9c0zc",
+			"name": "Laptop Gaming ASUS ASUS TUF F15 FX506LI",
+			"description": "procesor Intel® Core™ i5-10300H pana la 4.50 GHz, 15.6, Full HD, 144Hz, 8GB, 512GB SSD, NVIDIA® GeForce® GTX 1650 Ti 4GB, Free DOS, Bonfire Black",
+			"image": "assets/img/19.jpg",
+			"price": 4666,
+			"category": "Laptops",
+			"quantity": 41,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5,
+			"quantityCart": 0
+		},
+		{
+			"id": "1019",
+			"code": "mnb5mb2m5",
+			"name": "Laptop Gaming Lenovo Legion 5 15IMH05H",
+			"description": "procesor Intel® Core™ i5-10300H pana la 4.50 GHz, 15.6, Full HD, 144Hz, 16GB, 512GB SSD, NVIDIA® GeForce® RTX 2060 6GB, FreeDOS, Phantom Black",
+			"image": "assets/img/20.jpg",
+			"price": 5679,
+			"category": "Laptops",
+			"quantity": 63,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		},
+
+
+		{
+			"id": "1022",
+			"code": "2c42cb5cb",
+			"name": "Apple iPad 8 (2020)",
+			"description": "10.2, 32GB, Wi-Fi, Silver",
+			"image": "assets/img/23.jpg",
+			"price": 2000,
+			"category": "Tablets",
+			"quantity": 21,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4,
+			"quantityCart": 0
+		}
+		
+	]
+
+}

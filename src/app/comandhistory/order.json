@@ -1,0 +1,30 @@
+[
+    {
+        "code": "f230fh0g3",
+        "products": "prod1,prod2",
+        "price": 1,
+        "quantity":2,
+        "date":"10/07/2020"
+    },
+    {
+        "code": "143ef",
+        "products": "prod1",
+        "price": 2,
+        "quantity":1,
+        "date":"10/07/2020"
+    },
+    {
+        "code": "f230fhsdff0g3",
+        "products": "prod1,prod2,prod3",
+        "price": 43,
+        "quantity":1,
+        "date":"10/07/2020"
+    },
+    {
+        "code": "1efq3fes",
+        "products": "prod2",
+        "price": 65,
+        "quantity":1,
+        "date":"10/07/2020"
+    }
+]

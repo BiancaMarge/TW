@@ -1,0 +1,162 @@
+<app-toolbar></app-toolbar>
+<br>
+<app-carousel></app-carousel>
+<br>
+
+
+<div class="card-style">
+  <div *ngFor="let item of c"  id="FinalList">
+
+      <div class="card-style">
+        <div class="card-style" style="background-color: white">
+          <div class="flex-container">
+            <div class="flex-container-small">
+              <img src="{{item.image}}" width="120">
+              </div>
+
+              <div class="flex-container-small">
+                <p>{{item.name}}</p>
+                <p>{{item.description}}</p>
+              </div>
+
+              <div class="flex-container-small">
+                <p style="padding-left: 7rem">Price: {{item.price * item.quantityCart}} $</p>
+                <p style="padding-left: 7rem">Quantity: {{item.quantityCart}}</p>
+              </div>
+
+              <div class="flex-container-small">
+                <button class="buttons-style" (click)="DelQ(item)">-</button>
+              </div>
+
+              <div class="flex-container-small">
+                <button class="buttons-style" (click)="AddQ(item)">+</button>
+              </div>
+
+            </div>
+
+        </div>
+
+      </div>
+
+  </div>
+</div>
+
+  <div style="display: none;" id="OrdForm" >
+    <p-card>
+      <form method="post" action="#" name="myForm" id="myForm" onsubmit = "return (numberValidation())">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+            <!--firstName-->
+            <div class="md-form">
+              <label for="firstName" class=""><b>Prenume</b></label>
+              <input mdbInput required type="text" id="firstName" class="form-control login-form" />
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-2">
+            <!--lastName-->
+            <div class="md-form">
+              <label for="lastName" class=""><b>Nume</b></label>
+              <input required mdbInput type="text" id="lastName" class="form-control login-form" />
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+
+
+        <!--email-->
+        <div class="md-form">
+          <label for="email" class=""><b>Email</b> </label>
+          <input required
+            mdbInput
+            type="email"
+            id="email"
+                 email
+            class="form-control mb-4 login-form"
+            placeholder="youremail@example.com"
+          />
+        </div>
+
+        <!--address-->
+        <div class="md-form">
+          <label for="address" class=""><b>Adresa</b></label>
+          <input required
+            mdbInput
+            type="text"
+            id="address"
+            class="form-control mb-4 login-form"
+            placeholder="Judet, Oras, Str, Nr."
+          />
+        </div>
+
+        <div>
+          <label for="address" class=""><b>Metoda de plata</b></label>
+            <div class="p-field-radiobutton">
+              <p-radioButton name="radiobtn" value="radiobtn1" [(ngModel)]="radiobtn" inputId="radiobtn1"></p-radioButton>
+              <label>Card</label>
+
+              <p-radioButton name="radiobtn" value="radiobtn2" [(ngModel)]="radiobtn" inputId="radiobtn2"></p-radioButton>
+              <label>Ramburs</label>
+            </div>
+          <p></p>
+
+        </div>
+        <div>
+          <label class=""><b>Nume card</b></label>
+            <input required class="login-form"
+            mdbInput
+            type="text"
+            id="name"
+            placeholder="Name on card"
+          />
+        </div>
+        <div>
+            <label class=""><b>Data expirare card</b></label>
+            <input required class="login-form"
+            mdbInput
+            type="date"
+            id="expiration"
+            placeholder="Expiration"
+          />
+        </div>
+
+        <div>
+          <label class=""><b>Numar card</b></label>
+            <input required class="login-form"
+
+            type="text"
+            id="ccn"
+            placeholder="Credit card number"
+          />
+        </div>
+        <div>
+            <label class=""><b>CVV</b></label>
+            <input required class="login-form"
+            mdbInput
+            type="text"
+            id="cvv"
+            placeholder="CVV"
+          />
+        </div>
+    </form>
+      <button *ngIf="this.isButtonVisible2" class="buttons-style" (click)="final()" id="FinalPrimaPg" routerLink='/' > Finalizeaza comanda</button>
+                                                                                              <!--routerLink='/'-->
+    </p-card>
+
+  </div>
+        <button [disabled]="" *ngIf="this.isButtonVisible" (click)="showHide()" id="SprePlata" class="buttons-style" > Pasul Urmator</button>
+
+
+
+
+
+
+
+

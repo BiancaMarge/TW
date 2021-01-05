@@ -1,0 +1,26 @@
+<p>trebuie oleaca de css</p>
+<div>
+    <form  action="#">
+        <table >
+            <tr>
+                <td> Cod </td>
+                <td> Produse </td>
+                <td> Pret </td>
+                <td> Cantitate</td>
+                <td> Data </td>
+                <td> Selectati comenzile pt return</td>
+            </tr>
+            <tr *ngFor="let item of orderList">
+                <td> {{item.code}} </td>
+                <td> {{item.products}} </td>
+                <td> {{item.price}} </td>
+                <td> {{item.quantity}}</td>
+                <td> {{item.date}}</td>
+                <td>  <input type="checkbox"></td>
+            </tr>
+        </table>
+        <p> trebe conditie sa apese butonu numa daca cel putin un checkbox din ala ii bifat</p>
+        <a routerLink='/retur'><button type="submit">Returnare</button></a>
+        
+    </form>
+</div>
